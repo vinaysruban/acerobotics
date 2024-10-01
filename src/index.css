@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background: conic-gradient(rgb(24, 24, 24), rgb(4, 4, 4), rgb(24, 24, 24));
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  min-height: 200vw;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Mona Sans";
+    src: url("/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+      url("/fonts/Mona-Sans.woff2") format("woff2-variations");
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
