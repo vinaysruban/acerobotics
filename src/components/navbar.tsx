@@ -1,4 +1,3 @@
-import { SiGithub } from "react-icons/si";
 
 export default function Navbar() {
   const styles = {
