@@ -1,13 +1,9 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { Draggable } from "gsap/Draggable";
-import { useState, useRef, useEffect } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion"
 
 function Carousel({ vertical }: { vertical: number }) {
-  const [pressed, setPressed] = useState<boolean>(false);
   const sliderRef = useRef<HTMLDivElement>(null);
-
+  console.log(vertical)
 
 
   return (

@@ -3,7 +3,6 @@ import Navbar from "./components/layouts/navbar";
 import Hero from "./components/hero";
 import { AOSInit } from "./components/aos";
 import Carousel from "./components/carousel";
-import QuickNav from "./components/quicknav";
 
 
 function App() {

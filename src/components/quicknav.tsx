@@ -1,12 +1,9 @@
-import { motion, useScroll } from "framer-motion"
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion"
 import { FaCaretDown } from "react-icons/fa";
 
 
 
 function QuickNav() {
-    const { scrollY } = useScroll()
-    const [num, setnumber] = useState(0)
 
     return (
         <motion.div

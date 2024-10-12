@@ -2,7 +2,7 @@ import { BsSuitSpadeFill } from "react-icons/bs";
 import { FaInstagram, FaYoutube } from "react-icons/fa6";
 import { IoMailOpenOutline } from "react-icons/io5";
 import { Tilt } from "react-tilt";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import TextPlugin from "gsap/TextPlugin";
