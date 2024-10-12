@@ -11,7 +11,7 @@ function Carousel({ vertical }: { vertical: number }) {
       <div
         className="wrapper h-full w-screen mt-[12vw] overflow-hidden cursor-grab"
       >
-        <motion.div animate={{ x: 100 }} className="inner flex gap-12 w-fit" ref={sliderRef} >
+        <motion.div className="inner flex gap-12 w-fit" ref={sliderRef} >
           {[...Array(14)].map((_, index) => (
             <div
               key={index}
