@@ -1,0 +1,76 @@
+const imageRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    window.onpointermove = (e) => {
+      const { clientX, clientY } = e;
+      if (imageRef.current) {
+        imageRef.current.animate(
+          {
+            left: `${clientX}px`,
+            top: `${clientY}px`,
+          },
+          { duration: 100, fill: "forwards" }
+        );
+      }
+    };
+  }, []);
+
+  #blur {
+    background-color: white;
+    height: 34vw;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    animation: rotate 20s infinite;
+    opacity: 0.4;
+    z-index: -2;
+    filter: blur(12vmax);
+  }
+
+  function generateInertia(scroll: number) {
+    console.log(scroll)
+    if (Math.abs(scroll) < 1) return
+    console.log('adding')
+    if (sliderRef.current?.parentElement && sliderRef.current)
+      sliderRef.current.parentElement.scrollLeft += scroll/10;
+    setTimeout(function() {
+    }, 100);
+    generateInertia(scroll/10)
+  }
+
+      generateInertia(10000)
+
+
+function mouseDownEvent() {
+    setPressed(true);
+    if (sliderRef.current !== null)
+      sliderRef.current.style.cursor = "grabbing";
+  }
+
+  function mouseLeaveEvent() {
+    setPressed(false);
+    if (sliderRef.current !== null) sliderRef.current.style.cursor = "grab";
+  }
+
+  function mouseUpEvent(e: any) {
+    setPressed(false);
+    console.log("asd")
+    if (sliderRef.current !== null) sliderRef.current.style.cursor = "grab";
+  }
+
+  function mouseMoveEvent(e: any) {
+    if (pressed) {
+      if (sliderRef.current?.parentElement && sliderRef.current)
+        sliderRef.current.parentElement.scrollLeft -= e.movementX;
+    }
+  }
+
+  useEffect(() => {
+    if (sliderRef.current?.parentElement && sliderRef.current)
+      sliderRef.current.parentElement.scrollLeft += vertical * 1;
+  }, [vertical])
+
+  onMouseDown={mouseDownEvent} onMouseLeave={mouseLeaveEvent} onMouseUp={mouseUpEvent} onMouseMove={mouseMoveEvent}
