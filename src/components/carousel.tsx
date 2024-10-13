@@ -1,21 +1,33 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll } from "framer-motion"
 
+
 function Carousel({ vertical }: { vertical: number }) {
   const [sliderWidth, setSliderWidth] = useState(0)
-  //const [currentX, setCurrentX] = useState(0);
+  const [currentX, setCurrentX] = useState<number>(0);
   const sliderRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
+  //const [scrollAmount, setScrollAmount] = useState()
 
   useEffect(() => {
     console.log(vertical)
+    console.log(currentX)
     if (sliderRef.current)
       setSliderWidth(sliderRef.current?.clientWidth)
   })
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (currentX < sliderWidth) setCurrentX((x) => x += 60)
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
+
 
   return (
     <>
+      <hr className="bg-[url('/images/hawk2.svg')] bg-cover bg-no-repeat border-none h-[10vw] w-full" />
       <div
         className="wrapper h-full w-screen mt-[4vw] overflow-hidden cursor-grab rotate-3"
       >
@@ -24,11 +36,11 @@ function Carousel({ vertical }: { vertical: number }) {
           dragElastic={0.2}
           dragTransition={{ bounceDamping: 18 }}
           dragConstraints={{
-            left: -(sliderWidth - window.innerWidth),
+            left: -(sliderWidth - window.innerWidth) + sliderWidth/7,
             right: 0,
           }}
           animate={{
-            x: -scrollYProgress.get() * 1000
+            translateX: -scrollYProgress.get() * 1000
           }}
           className="inner flex gap-12 w-fit"
           ref={sliderRef} >
@@ -43,9 +55,12 @@ function Carousel({ vertical }: { vertical: number }) {
           ))}
         </motion.div>
       </div>
-      <h2 className="text-[8vw] text-white font-bold ml-[14vw] mt-[4vw]">We're up to <br /><span className="ml-[8vw]">something!</span></h2> 
+      
+      
     </>
   );
 }
 
 export default Carousel;
+
+//      <hr className="bg-[url('/images/hawk1.svg')] mt-[12vw] bg-cover bg-no-repeat border-none h-[10vw] w-full" /><h2 className="text-[8vw] text-white font-bold ml-[14vw] mt-[4vw]">We're up to <br /><span className="ml-[8vw]">something!</span></h2>

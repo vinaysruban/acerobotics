@@ -86,7 +86,7 @@ function Hero() {
       </motion.button>
       <motion.div className="absolute right-[4vw] top-[-20vw]"
         animate={{
-          y: ["0vh", "140vh", "141vh"],
+          y: ["0vh", "138vh", "139vh"],
           opacity: [1, 1, 0]
         }}
         transition={{
