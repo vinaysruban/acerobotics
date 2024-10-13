@@ -8,6 +8,7 @@ function Carousel({ vertical }: { vertical: number }) {
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
+    console.log(vertical)
     if (sliderRef.current)
       setSliderWidth(sliderRef.current?.clientWidth)
   })
