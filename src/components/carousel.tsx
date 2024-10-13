@@ -3,27 +3,28 @@ import { motion, useScroll } from "framer-motion"
 
 function Carousel({ vertical }: { vertical: number }) {
   const [sliderWidth, setSliderWidth] = useState(0)
+  //const [currentX, setCurrentX] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
-    console.log(sliderWidth)
-    if (sliderRef.current) setSliderWidth(sliderRef.current?.clientWidth)
+    if (sliderRef.current)
+      setSliderWidth(sliderRef.current?.clientWidth)
   })
 
 
   return (
     <>
       <div
-        className="wrapper h-full w-screen mt-[12vw] overflow-hidden cursor-grab rotate-3"
+        className="wrapper h-full w-screen mt-[4vw] overflow-hidden cursor-grab rotate-3"
       >
         <motion.div
           drag="x"
           dragElastic={0.2}
+          dragTransition={{ bounceDamping: 18 }}
           dragConstraints={{
             left: -(sliderWidth - window.innerWidth),
             right: 0,
-
           }}
           animate={{
             x: -scrollYProgress.get() * 1000
@@ -41,6 +42,7 @@ function Carousel({ vertical }: { vertical: number }) {
           ))}
         </motion.div>
       </div>
+      <h2 className="text-[8vw] text-white font-bold ml-[14vw] mt-[4vw]">We're up to <br /><span className="ml-[8vw]">something!</span></h2> 
     </>
   );
 }

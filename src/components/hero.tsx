@@ -112,6 +112,7 @@ function Hero() {
         </h2>
         <motion.div
           animate={{
+            opacity: [0, 1],
             y: ["10vw", "0vw"]
           }}
           transition={{
