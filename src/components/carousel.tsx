@@ -28,15 +28,19 @@ function Carousel({ vertical }: { vertical: number }) {
   return (
     <>
       <hr className="bg-[url('/images/hawk2.svg')] bg-cover bg-no-repeat border-none h-[10vw] w-full" />
+      <div className="text-white max-w-[42vw] flex gap-[4vw] mx-auto mt-[4vw]">
+        <p className="text-[1.5vw] mt-[1vw] font-extralight">WORK</p>
+        <h2 className="text-[2.5vw]">WE'RE ALWAYS DOING SOMETHING, WHETHER IT BE <strong>CRE<span className=" text-yellow-300">A</span>TING</strong>, <strong><span className="text-yellow-300">C</span>ODING</strong> OR <strong>OUTR<span className="text-yellow-400">E</span>ACH!</strong></h2>
+      </div>
       <div
-        className="wrapper h-full w-screen mt-[4vw] overflow-hidden cursor-grab rotate-3"
+        className="wrapper h-full w-screen mt-[6vw] overflow-hidden cursor-grab rotate-3"
       >
         <motion.div
           drag="x"
           dragElastic={0.2}
           dragTransition={{ bounceDamping: 18 }}
           dragConstraints={{
-            left: -(sliderWidth - window.innerWidth) + sliderWidth/7,
+            left: -(sliderWidth - window.innerWidth) + sliderWidth / 7,
             right: 0,
           }}
           animate={{
@@ -50,13 +54,14 @@ function Carousel({ vertical }: { vertical: number }) {
               style={{
                 backgroundImage: `url(/images/slideshow/${(index % 7) + 1}.webp)`,
               }}
-              className={`box aspect-[5/4] rounded-[2vw] min-w-[26vw] pointer-events-none select-none bg-cover`}
+              className={`box aspect-[5/4] rounded-[2vw] min-w-[32vw] pointer-events-none select-none bg-cover`}
             ></div>
           ))}
         </motion.div>
       </div>
-      
-      
+    
+
+
     </>
   );
 }

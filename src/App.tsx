@@ -30,7 +30,7 @@ function App() {
 
 
   return (
-    <div onWheel={wheelEvent}>
+    <div onWheel={wheelEvent} className=" font-mona">
       <AOSInit />
       <div className="bg-[white] h-[34vw] aspect-[1] absolute animate-[rotate_20s_infinite] opacity-40 z-[-2] blur-[12vmax] rounded-[50%] left-2/4 top-2/4 translate-x-[-50%] translate-y-[-50%]" id="blur" ref={blurRef}></div>
       <Navbar />
