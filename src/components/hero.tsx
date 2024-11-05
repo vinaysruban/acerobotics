@@ -81,7 +81,7 @@ function Hero() {
           ease: "easeInOut",
           times: [0, 1],
         }}
-        className="robotButton border-solid border-[0.2vw] border-yellow-300 bg-yellow-300 text-neutral-900 text-[1.4vw] absolute left-[40vw] top-[9.5vw] px-[2.5vw] py-[0.5vw] rounded-full font-medium shadow-[0px_0px_28px_0px_rgba(253,_255,_71,_1)] hover:shadow-[0px_0px_36px_0px_rgba(253,_255,_71,_1)] transition-shadow z-10">
+        className="robotButton border-solid border-[0.2vw] border-yellow-300 bg-yellow-300 text-neutral-900 text-[1.4vw] absolute left-[42vw] top-[8.5vw] px-[2.5vw] py-[0.5vw] rounded-full font-medium shadow-[0px_0px_28px_0px_rgba(253,_255,_71,_1)] hover:shadow-[0px_0px_36px_0px_rgba(253,_255,_71,_1)] transition-shadow z-10">
         Learn about our robot.
       </motion.button>
       {/**<motion.div className="absolute right-[4vw] top-[-20vw]"
