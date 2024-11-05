@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  background: conic-gradient(rgb(24, 24, 24), rgb(4, 4, 4), rgb(24, 24, 24));
+  background: conic-gradient(rgb(12, 12, 12), rgb(4, 4, 4), rgb(12, 12, 12));
   background-repeat: no-repeat;
   overflow-x: hidden;
   min-height: 200vw;

@@ -81,10 +81,10 @@ function Hero() {
           ease: "easeInOut",
           times: [0, 1],
         }}
-        className="robotButton border-solid border-[0.2vw] border-yellow-300 bg-yellow-300 text-neutral-900 text-[1.5vw] absolute left-[42vw] top-[12vw] px-[2.5vw] py-[0.5vw] rounded-full font-medium shadow-[0px_0px_28px_0px_rgba(253,_255,_71,_1)] hover:shadow-[0px_0px_36px_0px_rgba(253,_255,_71,_1)] transition-shadow z-10">
+        className="robotButton border-solid border-[0.2vw] border-yellow-300 bg-yellow-300 text-neutral-900 text-[1.4vw] absolute left-[42vw] top-[10vw] px-[2.5vw] py-[0.5vw] rounded-full font-medium shadow-[0px_0px_28px_0px_rgba(253,_255,_71,_1)] hover:shadow-[0px_0px_36px_0px_rgba(253,_255,_71,_1)] transition-shadow z-10">
         Learn about our robot.
       </motion.button>
-      <motion.div className="absolute right-[4vw] top-[-20vw]"
+      {/**<motion.div className="absolute right-[4vw] top-[-20vw]"
         animate={{
           y: ["0vh", "138vh", "139vh"],
           opacity: [1, 1, 0]
@@ -95,17 +95,19 @@ function Hero() {
         }}>
           <div className="w-[4vw] aspect-square rounded-full bg-yellow-300"></div>
           <div className="absolute w-0 h-0 border-x-transparent border-x-[2vw] border-b-[4vw] border-b-white right-[0vw] top-[-2vw] blur-2xl"></div>
-      </motion.div>
+      </motion.div>**/}
       <section ref={container}>
-        <h1 className="text-[30vw] text-white font-bold mx-auto w-fit leading-[35vw]">
+        <h1
+          className="text-[38vw] text-white font-bold mx-auto w-fit leading-[34vw]">
           <Tilt options={defaultOptions} className="inline-block w-min">
             <BsSuitSpadeFill className="inline" />
           </Tilt>
           ce
         </h1>
-        <h2 className="text-[2vw] text-neutral-200 font-semibold mx-auto w-fit text-center mt-[2.4vw]">
+        {/**<img alt="hello" src="/images/robot1.png" className="w-[40vw] -z-[1] top-[30vw] absolute left-[calc(50%-20vw)]" />*/}
+        <h2 className="text-[1.8vw] text-neutral-200 font-semibold mx-auto w-fit text-center mt-[0.8vw] mb-[1vw]">
           Ace Robotics is <span className="wordArticle">an</span>{" "}
-          <span className="text-yellow-300 wordCarousel text-[2.2vw]">
+          <span className="text-yellow-300 wordCarousel text-[2vw]">
             innovation
           </span>{" "}
           centric FTC team with a big vision for the future.
@@ -119,9 +121,9 @@ function Hero() {
             duration: 1,
             ease: "easeInOut",
           }}
-          className="mx-auto w-fit mt-[2.4vw]"
+          className="mx-auto w-fit mt-[1.6vw]"
         >
-          <ul className="flex text-neutral-100 flex-row gap-[2vw] text-[2.2vw] justify-center sm:justify-normal">
+          <ul className="flex text-neutral-100 flex-row gap-[4vw] text-[1.8vw] justify-center sm:justify-normal child:border-yellow-400 child:border-b-[0.2vw] child:p-[0.6vw] child:rounded">
             <li className="ml-0">
               <a
                 href="https://www.instagram.com/combat_wombats_ftc_aus/"
